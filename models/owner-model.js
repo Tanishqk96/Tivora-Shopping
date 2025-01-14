@@ -17,4 +17,4 @@ contact:Number,
 picture:String,
 })
 // EXPORTING THE USERSCHEMA DATABASE( CHANGES TO BE MADE)
-mongoose.exports = mongoose.model("owner",ownerSchema);
+module.exports = mongoose.model("owner",ownerSchema);

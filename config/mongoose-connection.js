@@ -1,11 +1,13 @@
 // LOCAL MONGODB DB USED HERE, DO NOT PUSH WITHOUT CHANGING THE CONNECTION 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/tivora')
+const config = require('config');
+const debug = require('debug')("development:mongoose");
+mongoose.connect(`${config.get("MONGODB_URI")}/tivora`)
 .then(function(){
-    console.log("connected sucessfully!");
+    debug("connected sucessfully!");
 })
 .catch(function(err){
-    console.log(err);
+    debug(err);
 })
 
 module.exports = mongoose.connection;
