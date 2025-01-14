@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,"public")))
+//app.use(express.static(path.join(__dirname,"views")))
 app.set("view engine","ejs");
 
 // REQUIRING ALL THE ROUTERS NEEDED:
@@ -18,7 +19,9 @@ const usersRouter = require('./routes/usersRouter');
 app.use('/owners', ownersRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-
+app.get('/', function(req,res){
+    res.render('index')
+})
 app.listen(3000,()=>{
     console.log("server running fine!")
 });
