@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=   , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1 class="title">
-        Hello world!
-      </h1>
+<body class="font-['helvetica_now_display']">
+    <!-- Include Header -->
+    <%- include('partials/header') %>
+
+    <main class="pt-20">
+        <!-- Main content goes here -->
+        <h1 class="text-center text-3xl font-bold">Welcome to the Main Page</h1>
+    </main>
+
+    <!-- Include Footer -->
+    <%- include('partials/footer') %>
 </body>
 </html>
